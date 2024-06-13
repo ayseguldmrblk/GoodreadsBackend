@@ -1,0 +1,27 @@
+<!-- your_app/templates/your_app/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Your Project{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'your_app/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Project</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'books_with_reviews' %}">Books with Reviews</a></li>
+            <li><a href="{% url 'reviews_with_books' %}">Reviews with Books</a></li>
+            <li><a href="{% url 'books_and_reviews' %}">Books and Reviews</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Project</p>
+    </footer>
+</body>
+</html>

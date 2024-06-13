@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Goodreads DB",
+            "group": "localhost",
+            "database": "goodreads_db",
+            "username": "goodreads_user",
+            "password": "123456789"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+<!-- your_app/templates/your_app/books_and_reviews.html -->
+{% extends "Books/base.html" %}
+
+{% block title %}Books and Reviews{% endblock %}
+
+{% block content %}
+<h1>Books and Reviews</h1>
+<table>
+    <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Review Comment</th>
+    </tr>
+    {% for book_id, title, comment in data %}
+    <tr>
+        <td>{{ book_id }}</td>
+        <td>{{ title }}</td>
+        <td>{{ comment }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
