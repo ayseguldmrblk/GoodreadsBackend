@@ -34,6 +34,7 @@ class Book(models.Model):
     series = models.ForeignKey(BookSeries, on_delete=models.CASCADE, null=True, blank=True)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    review_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title

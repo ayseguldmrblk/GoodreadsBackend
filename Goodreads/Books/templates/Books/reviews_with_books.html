@@ -1,22 +1,52 @@
-<!-- your_app/templates/your_app/reviews_with_books.html -->
-{% extends "Books/base.html" %}
+<!-- Books/templates/Books/reviews_with_books.html -->
 
-{% block title %}Reviews with Books{% endblock %}
-
-{% block content %}
-<h1>Reviews with Books</h1>
-<table>
-    <tr>
-        <th>Review ID</th>
-        <th>Comment</th>
-        <th>Book Title</th>
-    </tr>
-    {% for review_id, comment, title in data %}
-    <tr>
-        <td>{{ review_id }}</td>
-        <td>{{ comment }}</td>
-        <td>{{ title }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Reviews with Books</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Books/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Reviews with Books</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'books_with_reviews' %}">Books with Reviews</a></li>
+            <li><a href="{% url 'reviews_with_books' %}">Reviews with Books</a></li>
+            <li><a href="{% url 'books_and_reviews' %}">Books and Reviews</a></li>
+            <li><a href="{% url 'books_with_avg_ratings' %}">Books with Average Ratings</a></li>
+            <li><a href="{% url 'active_users' %}">Active Users</a></li>
+            <li><a href="{% url 'books_without_reviews' %}">Books without Reviews</a></li>
+            <li><a href="{% url 'top_5_most_followed_users' %}">Top 5 Most Followed Users</a></li>
+            <li><a href="{% url 'recent_reviews' %}">Recent Reviews</a></li>
+        </ul>
+    </nav>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Review ID</th>
+                    <th>Comment</th>
+                    <th>Book Title</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review_id, comment, book_title, username in data %}
+                    <tr>
+                        <td>{{ review_id }}</td>
+                        <td>{{ comment }}</td>
+                        <td>{{ book_title }}</td>
+                        <td>{{ username }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Goodreads Backend Project</p>
+    </footer>
+</body>
+</html>

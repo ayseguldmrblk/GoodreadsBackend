@@ -16,9 +16,10 @@ def fetch_books_with_reviews():
 def fetch_reviews_with_books():
     with connection.cursor() as cursor:
         cursor.execute("""
-            SELECT r.id, r.comment, b.title
+            SELECT r.id, r.comment, b.title, u.username
             FROM "Books_review" r
-            RIGHT JOIN "Books_book" b ON r.book_id = b.id
+            JOIN "Books_book" b ON r.book_id = b.id
+            JOIN "auth_user" u ON r.user_id = u.id
         """)
         results = cursor.fetchall()
     return results
