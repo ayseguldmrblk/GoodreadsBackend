@@ -1,0 +1,21 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Active Users{% endblock %}
+
+{% block content %}
+<h1>Active Users</h1>
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Last Activity</th>
+    </tr>
+    {% for user_id, username, last_activity in data %}
+    <tr>
+        <td>{{ user_id }}</td>
+        <td>{{ username }}</td>
+        <td>{{ last_activity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>{% block title %}Goodreads Backend{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Books/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Goodreads Backend Project</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'books_with_reviews' %}">Books with Reviews</a></li>
+            <li><a href="{% url 'reviews_with_books' %}">Reviews with Books</a></li>
+            <li><a href="{% url 'books_and_reviews' %}">Books and Reviews</a></li>
+            <li><a href="{% url 'books_with_avg_ratings' %}">Books with Average Ratings</a></li>
+            <li><a href="{% url 'active_users' %}">Active Users</a></li>
+            <li><a href="{% url 'books_without_reviews' %}">Books without Reviews</a></li>
+            <li><a href="{% url 'top_5_most_followed_users' %}">Top 5 Most Followed Users</a></li>
+            <li><a href="{% url 'recent_reviews' %}">Recent Reviews</a></li>
+            <li><a href="{% url 'add_review' %}">Add Review</a></li>
+            <li><a href="{% url 'follow_user' %}">Follow User</a></li>
+            <li><a href="{% url 'transfer_book' %}">Transfer Book</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Goodreads Backend Project</p>
+    </footer>
+</body>
+</html>

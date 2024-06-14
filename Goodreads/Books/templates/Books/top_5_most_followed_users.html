@@ -1,0 +1,21 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Top 5 Most Followed Users{% endblock %}
+
+{% block content %}
+<h1>Top 5 Most Followed Users</h1>
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Followers Count</th>
+    </tr>
+    {% for user_id, username, followers_count in data %}
+    <tr>
+        <td>{{ user_id }}</td>
+        <td>{{ username }}</td>
+        <td>{{ followers_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

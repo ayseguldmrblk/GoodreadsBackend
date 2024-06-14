@@ -1,0 +1,21 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Books with Average Ratings{% endblock %}
+
+{% block content %}
+<h1>Books with Average Ratings</h1>
+<table>
+    <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Average Rating</th>
+    </tr>
+    {% for book_id, title, average_rating in data %}
+    <tr>
+        <td>{{ book_id }}</td>
+        <td>{{ title }}</td>
+        <td>{{ average_rating }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

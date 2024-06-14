@@ -89,3 +89,11 @@ class Shelf(models.Model):
 
     def __str__(self):
         return f'{self.user.username} - {self.name}'
+
+class ShelfBooks(models.Model):
+    shelf = models.ForeignKey(Shelf, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.shelf.name} - {self.book.title}'

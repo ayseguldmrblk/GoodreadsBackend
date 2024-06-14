@@ -1,0 +1,23 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Add Review{% endblock %}
+
+{% block content %}
+<h1>Add Review</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="book_id">Book ID:</label>
+    <input type="text" id="book_id" name="book_id">
+    
+    <label for="user_id">User ID:</label>
+    <input type="text" id="user_id" name="user_id">
+    
+    <label for="rating">Rating:</label>
+    <input type="text" id="rating" name="rating">
+    
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment"></textarea>
+    
+    <button type="submit">Add Review</button>
+</form>
+{% endblock %}

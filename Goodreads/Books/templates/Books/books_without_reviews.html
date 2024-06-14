@@ -1,0 +1,19 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Books without Reviews{% endblock %}
+
+{% block content %}
+<h1>Books without Reviews</h1>
+<table>
+    <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+    </tr>
+    {% for book_id, title in data %}
+    <tr>
+        <td>{{ book_id }}</td>
+        <td>{{ title }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

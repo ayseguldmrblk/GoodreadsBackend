@@ -1,0 +1,17 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Follow User{% endblock %}
+
+{% block content %}
+<h1>Follow User</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="following_user_id">Your User ID:</label>
+    <input type="text" id="following_user_id" name="following_user_id">
+    
+    <label for="followed_user_id">User ID to Follow:</label>
+    <input type="text" id="followed_user_id" name="followed_user_id">
+    
+    <button type="submit">Follow User</button>
+</form>
+{% endblock %}

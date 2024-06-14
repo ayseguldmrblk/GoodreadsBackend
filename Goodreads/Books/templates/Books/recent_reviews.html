@@ -1,0 +1,27 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Recent Reviews{% endblock %}
+
+{% block content %}
+<h1>Recent Reviews</h1>
+<table>
+    <tr>
+        <th>Review ID</th>
+        <th>Comment</th>
+        <th>Rating</th>
+        <th>Created At</th>
+        <th>Book Title</th>
+        <th>Reviewer</th>
+    </tr>
+    {% for review_id, comment, rating, created_at, book_title, reviewer in data %}
+    <tr>
+        <td>{{ review_id }}</td>
+        <td>{{ comment }}</td>
+        <td>{{ rating }}</td>
+        <td>{{ created_at }}</td>
+        <td>{{ book_title }}</td>
+        <td>{{ reviewer }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

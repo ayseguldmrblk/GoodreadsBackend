@@ -1,47 +1,131 @@
-/* your_app/static/your_app/style.css */
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #ffe6f2; /* Light pink background */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-header, footer {
-    background-color: #f8f8f8;
-    padding: 10px 20px;
+/* Header styling */
+header {
+    background: #ff99cc; /* Soft pink */
+    color: #ffffff;
+    padding: 20px 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Navigation styling */
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    background: #ff99cc; /* Soft pink */
+    list-style: none;
     padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin-right: -4px;
 }
 
 nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
+    transition: background 0.3s;
 }
 
+nav ul li a:hover {
+    background: #ff66b2; /* Slightly darker pink */
+}
+
+/* Main content styling */
+main {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 8px;
+    border: 1px solid #dddddd;
+    padding: 10px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background: #ff99cc; /* Soft pink */
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background: #ffe6f2; /* Light pink */
+}
+
+/* Form styling */
+form {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ff66b2; /* Darker pink for labels */
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #ffe6f2; /* Light pink */
+}
+
+form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff99cc; /* Soft pink */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #ff66b2; /* Slightly darker pink */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #ff99cc; /* Soft pink */
+    color: #ffffff;
+    margin-top: 20px;
 }

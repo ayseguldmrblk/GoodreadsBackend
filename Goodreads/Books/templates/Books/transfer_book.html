@@ -1,0 +1,20 @@
+{% extends "Books/base.html" %}
+
+{% block title %}Transfer Book{% endblock %}
+
+{% block content %}
+<h1>Transfer Book</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="book_id">Book ID:</label>
+    <input type="text" id="book_id" name="book_id">
+    
+    <label for="from_shelf_id">From Shelf ID:</label>
+    <input type="text" id="from_shelf_id" name="from_shelf_id">
+    
+    <label for="to_shelf_id">To Shelf ID:</label>
+    <input type="text" id="to_shelf_id" name="to_shelf_id">
+    
+    <button type="submit">Transfer Book</button>
+</form>
+{% endblock %}
